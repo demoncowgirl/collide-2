@@ -11,7 +11,7 @@ const mouse = {
     y: 10
 }
 
-const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
+const colors = ['#700000', '#C17D07', '#004C28', '#0F1F3A'];
 
 // Event Listeners
 addEventListener('mousemove', function(event){
@@ -121,7 +121,7 @@ function Particle(x, y, radius, color) {
         }
 
         // mouse collision detection
-        if(distance(mouse.x, mouse.y, this.x, this.y) < 120 && this.opacity < 0.2){
+        if(distance(mouse.x, mouse.y, this.x, this.y) < 120 && this.opacity < 0.6){
           this.opacity += 0.02;
         }else if(this.opacity > 0){
           this.opacity -= 0.02;
@@ -153,7 +153,7 @@ var particles;
 function init() {
   particles = [];
 
-  for(var i=0; i < 300; i++){
+  for(var i=0; i < 400; i++){
     const radius = 15;
     var x = randomIntFromRange(radius, canvas.width - radius);
     var y = randomIntFromRange(radius, canvas.height - radius);
